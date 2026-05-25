@@ -24,13 +24,27 @@ Phase 5 ─ Network          Open beta: >2 nodes in P2P inference cluster
 | **Hermes** | Inference | Model serving, container build, multi-platform deployment |
 | **WuBu** (this) | Design + Build Plan | Walkway, architecture, nothing to ship |
 
-## Status
+## Status (2026-05-25)
 
-Kernel layer: 🔲 Not started (design complete in walkway 03)
-P2P layer:    🔲 Not started (design complete in walkway 04)
-RTC layer:    🔲 Not started (design complete in walkway 05)
-Deploy layer: 🔲 Not started (design complete in walkway 06)
-Network:      🔲 Not started
+**RustChain mining:** ✅ Miner running 6hr+ on WSL (1e-09x VM weight). C symplectic loop built. WSL Bridge with 8-source Windows entropy reader built. Enhanced miner orchestrator tested.
+
+**BATTLESHIP progress:** 123/400 cells vaulted. 64 PRs submitted. Waves 7-8 complete (F20-F44 Form fixes + T7-T9 test coverage). 19 PRs jaxint-approved.
+
+**Polymarket trading:** $747M paper PnL, 73.8% WR (2569W/910L), 4 assets (BTC/ETH/SOL/XRP), running on 5-min cron.
+
+**Walkway:** 01-prestige through 07-verify complete. All design docs written.
+
+| Component | Status | Location |
+|-----------|--------|----------|
+| Custom CUDA kernels (bytropix) | ✅ Mature | `THEORY/math_viz/`, `.hermes/vault/optimizers/` |
+| RTC token + mining | ✅ Live | RustChain fork at `~/rustchain/` |
+| RustChain P2P consensus | ✅ Live | RustChain validator set |
+| Model engines (Hermes) | ✅ Live | Hermes serving infra |
+| Inference tests on Ada-class | 🔲 Not started | — |
+| MTP speculative decode | 🔲 Not started | — |
+| Bittorrent DHT for shards | 🔲 Not started | — |
+| RTC proof-of-seeding | 🔲 Not started | — |
+| RTC proof-of-inference | 🔲 Not started | — |
 
 ## Hard Rules
 
@@ -39,3 +53,5 @@ Network:      🔲 Not started
 - No delegation for kernel development (bytropix work done in Hermes sessions)
 - All code MIT licensed
 - Phase 1 must pass all verification criteria before Phase 2 starts
+- White-hat only — ETHICS.md filed at ~/rustchain/ETHICS.md
+- Zero delegation — delegate_task banned for all purposes
