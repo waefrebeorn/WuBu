@@ -1,0 +1,30 @@
+# WuBu P2P Inference Network — State
+
+**Date:** 2026-05-25
+**Status:** Design Phase (walkway complete, no code written)
+
+## What Exists
+
+- Walkway documents: 01-prestige through 07-verify ✅
+- Architecture document: Full cross-repo design ✅ 
+- Target hardware identified: Steam Deck + Ada89 (6-8GB) ✅
+
+## What's Blocked
+
+- Phase 1 (kernel) won't start until bytropix CUDA kernel development session spins up
+- Phase 2 (P2P) can't start until INT4 matmul + MTP acceptance rate proven on target
+- Phase 3 (RTC) can't start until RustChain fork integration planned
+- Phase 4 (Deploy) can't start until Hermes container strategy decided
+
+## Active Questions
+
+1. MTP acceptance rate for Qwen 3.6-35B A3B — unknown, must benchmark
+2. Ada89 INT4 tensor core throughput at batch=1 — unknown, must benchmark
+3. RustChain block time vs inference proof intervals — need RTC config
+4. Steam Deck unified memory pool performance — unknown
+5. Bittorrent library choice: `mainline` (Rust) vs `libtorrent` (C++) for DHT
+
+## Next Action
+
+When user signals Phase 1 start: begin CUDA kernel work in bytropix repo.
+Start with `quant_4bpw.cu` — reference INT4 matmul, verify precision against FP16.

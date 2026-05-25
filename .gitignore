@@ -1,19 +1,36 @@
-target/
-**/*.rs.bk
-*.pdb
-.idea/
-.vs/
-output/
-Zonos_src/
+# WuBu P2P Inference Network
 
-# Python virtual environment
-venv/
-*.venv/
-
-# Python cache files
-__pycache__/
+# Ignore Python artifacts from old WuBu repo
 *.pyc
+__pycache__/
+*.pyo
+*.egg-info/
+dist/
+build/
 
-# Environment variables file
-*.env
-config.json
+# Rust build artifacts
+target/
+Cargo.lock
+
+# CUDA build artifacts
+*.o
+*.so
+*.fatbin
+*.cubin
+
+# Model shards (large, user-managed)
+shards/
+models/
+
+# Docker
+*.docker-cache
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
